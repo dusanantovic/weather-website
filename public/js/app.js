@@ -1,6 +1,3 @@
-const url = new URL(window.location.href);
-const apiUrl = url.origin;
-
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input[name='location']");
 const messageOne = document.querySelector("#messageOne");
@@ -11,7 +8,7 @@ weatherForm.addEventListener("submit", async (e) => {
     const location = search.value;
     messageOne.textContent = "Loading...";
     messageTwo.textContent = "";
-    const response = await fetch(`${apiUrl}/weather?address=${location}`);
+    const response = await fetch(`/weather?address=${location}`);
     const data = await response.json();
     messageOne.textContent = "";
     if(data.error) {
