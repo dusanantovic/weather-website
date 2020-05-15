@@ -6,8 +6,6 @@ const search = document.querySelector("input[name='location']");
 const messageOne = document.querySelector("#messageOne");
 const messageTwo = document.querySelector("#messageTwo");
 
-
-
 weatherForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const location = search.value;
