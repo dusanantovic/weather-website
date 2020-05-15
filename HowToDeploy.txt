@@ -1,0 +1,35 @@
+Git initial:
+
+    git init
+    git add .
+    git commit -m "Message"
+
+Setting up SSH keys:
+
+    ls -a -l ~/.ssh     (It is not necessary)
+    ssh-keygen -t rsa -b 4096 -C "antovic95@gmail.com"     (Generate key -t is type RSA is protocol -b is for number bytes -C is flag for comment and "antovic95@gmail.com" is comment)
+    ls -a -l ~/.ssh     (It is not necessary)
+    LINUX / APPLE
+        eval "$(ssh-agent -s)"     (Printing agent ssh key)
+    WINDOWS
+        eval $(ssh-agent -s)     (Printing agent ssh key)
+    LINUX / WINDOWS
+        ssh-add ~/.ssh/id_rsa     (Register the file)
+    APPLE
+        ssh-add -K ~/.ssh/id_rsa     (Register the file)
+
+Git create repository (Github new repository...)
+
+    git remote add origin git@github.com:dusanantovic/weather-website.git
+    - Set up new ssh key in github settings
+    cat ~/.ssh/id_rsa.pub     (Printing the key)
+    - Add ssh key in github
+    ssh -T git@github.com      (Testing connection with git)
+    git push -u origin master
+
+Set up Heroku
+
+    heroku keys:add     (Which keys you want to upload)
+    heroku create antovic-weather-APPLE
+    git remote     (View all off the configure remotes)
+    git push heroku master
